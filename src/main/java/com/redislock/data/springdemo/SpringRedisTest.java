@@ -6,11 +6,11 @@ import redis.clients.jedis.JedisPool;
 
 public class SpringRedisTest {
 
-    static ClassPathXmlApplicationContext appCtx = new ClassPathXmlApplicationContext("applicationContext-redis.xml");
+    static ClassPathXmlApplicationContext appCtx = new ClassPathXmlApplicationContext("classpath*:applicationContext-redis.xml");
+    static JedisPool jedisPool = (JedisPool)appCtx.getBean("jedisPool",JedisPool.class);
+
 
     public static void main(String[] args) {
-
-        JedisPool jedisPool = (JedisPool)appCtx.getBean("jedisPool",JedisPool.class);
 
         for (int i = 0; i <50 ; i++) {
             Jedis jedis = jedisPool.getResource();
