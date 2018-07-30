@@ -4,6 +4,10 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+/**
+ * 测试jedis的api
+ * 学习jedis实例
+ */
 public class RedisDemo {
     //Redis服务器IP
     private static String ADDR = "localhost";
